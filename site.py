@@ -836,7 +836,7 @@ if opcao_servico == "📥 Downloader":
                 # --------------------------------------------------
 
                 opcoes_download = {
-                    "format": "b[ext=mp4]/b/best",
+                    "format": "b[vcodec^=avc1]/b[ext=mp4]/b/best",
                     "outtmpl": nome_temporario,
                     "quiet": True,
                     "no_warnings": True,
