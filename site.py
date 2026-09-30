@@ -58,7 +58,7 @@ st.sidebar.markdown("# 🚀 Menu Mig Lipe")
 st.sidebar.markdown("---")
 opcao_servico = st.sidebar.radio(
     "ESCOLHA A FERRAMENTA:",
-    ["🎨 Criador de Imagens", "📥 Baixar Vídeos Grátis"]
+    [ "📥 Baixar Vídeos Grátis", "🎨 Criador de Imagens"]
 )
 
 # ----------------------------------------------------
@@ -120,7 +120,7 @@ elif opcao_servico == "📥 Baixar Vídeos Grátis":
                         'outtmpl': nome_arquivo_saida,
                         'quiet': True,
                         'no_warnings': True
-                    }
+                    }AA
 
                     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                         ydl.download([url_video])
