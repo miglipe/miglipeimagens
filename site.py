@@ -119,7 +119,7 @@ elif opcao_servico == "📥 Baixar Vídeos Grátis":
                         'format': 'best[ext=mp4]/best',
                         'outtmpl': nome_arquivo_saida,
                         'quiet': True,
-                        'no_warnings': True
+                        'no_warnings': True}
 
 
                     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
