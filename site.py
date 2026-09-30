@@ -834,22 +834,18 @@ if opcao_servico == "📥 Downloader":
                 # ------------------------------------------------
 
                 opcoes_download = {
-
                     "format": "b[ext=mp4]/b/best",
-
-                    "outtmpl":
-                        nome_temporario,
-
-                    "quiet":
-                        True,
-
-                    "no_warnings":
-                        True,
-
-                    "noplaylist":
-                        True
+                    "outtmpl": nome_temporario,
+                    "quiet": True,
+                    "no_warnings": True,
+                    "noplaylist": True,
+                    "cookiefile": cookie_path,
+                    "extractor_args": {
+                        "youtube": {
+                            "player_client": ["ios", "mweb"]
+                        }
+                    }
                 }
-
 
                 with st.spinner(
                     "⬇️ Preparando seu vídeo..."
