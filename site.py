@@ -120,7 +120,7 @@ elif opcao_servico == "📥 Baixar Vídeos Grátis":
                         'outtmpl': nome_arquivo_saida,
                         'quiet': True,
                         'no_warnings': True
-                    }AA
+
 
                     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                         ydl.download([url_video])
