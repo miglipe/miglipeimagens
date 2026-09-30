@@ -2,9 +2,16 @@
 import streamlit as st
 import yt_dlp
 import os
+import tempfile
 import uuid
 from PIL import Image
 
+def obter_caminho_cookies():
+    if "YOUTUBE_COOKIES" in st.secrets:
+        with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".txt") as f:
+            f.write(st.secrets["YOUTUBE_COOKIES"])
+            return f.name
+    return None
 
 # ============================================================
 # CONFIGURAÇÃO
@@ -573,6 +580,20 @@ if opcao_servico == "📥 Downloader":
         else:
 
             url_video = url_video.strip()
+            cookie_path = obter_caminho_cookies()
+
+            opcoes_info = {
+                "quiet": True,
+                "no_warnings": True,
+                "noplaylist": True,
+                "cookiefile": cookie_path,
+                "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+                "extractor_args": {
+                    "youtube": {
+                        "player_client": ["ios", "mweb"]
+                    }
+                }
+            }
 
             # ------------------------------------------------
             # CONFIGURAÇÃO PARA APENAS ANALISAR
