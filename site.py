@@ -836,11 +836,15 @@ if opcao_servico == "📥 Downloader":
                 # --------------------------------------------------
 
                 opcoes_download = {
-                    "format": "b[vcodec^=avc1]/b[ext=mp4]/b/best",
+                    "format": "b[ext=mp4]/b/best",
                     "outtmpl": nome_temporario,
                     "quiet": True,
                     "no_warnings": True,
                     "noplaylist": True,
+                    "postprocessors": [{
+                        "key": "FFmpegVideoConvertor",
+                        "preferedformat": "mp4",
+                    }],
                 }
 
                 if "youtube.com" in url_para_download or "youtu.be" in url_para_download:
