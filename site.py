@@ -598,19 +598,20 @@ if opcao_servico == "📥 Downloader":
             # ------------------------------------------------
             # CONFIGURAÇÃO PARA APENAS ANALISAR
             # ------------------------------------------------
-
             opcoes_info = {
                 "quiet": True,
                 "no_warnings": True,
                 "noplaylist": True,
                 "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
-                "extractor_args": {
+            }
+
+            if "youtube.com" in url_video or "youtu.be" in url_video:
+                opcoes_info["cookiefile"] = cookie_path
+                opcoes_info["extractor_args"] = {
                     "youtube": {
                         "player_client": ["ios", "mweb"]
                     }
                 }
-            }
-
             # ------------------------------------------------
             # IDENTIFICAR E EXTRAIR INFORMAÇÕES
             # ------------------------------------------------
@@ -829,9 +830,10 @@ if opcao_servico == "📥 Downloader":
                 )
 
 
-                # ------------------------------------------------
+
+                # --------------------------------------------------
                 # OPÇÕES DO DOWNLOAD
-                # ------------------------------------------------
+                # --------------------------------------------------
 
                 opcoes_download = {
                     "format": "b[ext=mp4]/b/best",
@@ -839,13 +841,15 @@ if opcao_servico == "📥 Downloader":
                     "quiet": True,
                     "no_warnings": True,
                     "noplaylist": True,
-                    "cookiefile": cookie_path,
-                    "extractor_args": {
+                }
+
+                if "youtube.com" in url_para_download or "youtu.be" in url_para_download:
+                    opcoes_download["cookiefile"] = cookie_path
+                    opcoes_download["extractor_args"] = {
                         "youtube": {
                             "player_client": ["ios", "mweb"]
                         }
                     }
-                }
 
                 with st.spinner(
                     "⬇️ Preparando seu vídeo..."
