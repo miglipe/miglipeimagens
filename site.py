@@ -19,15 +19,18 @@ analytics_codigo = """
   gtag('config', 'G-P4CVEVB7K5');
 </script>
 """
-# --- TAGS DE SEO E META TAGS ---
+# --- TAGS DE SEO E META TAGS COMPLETAS E OTIMIZADAS ---
 seo_tags = """
 <head>
-    <meta name="description" content="Baixe suas mídias rapidamente com o Guelpe Downloader de vídeos e criador de imagens.">
-    <meta property="og:title" content="Guelpe - Downloader de Mídias">
-    <meta property="og:description" content="Baixe vídeos e mídias de forma simples e rápida.">
+    <meta name="description" content="Baixe vídeos do Instagram, TikTok, Kwai, YouTube e outras redes sociais sem marca d'água, em alta qualidade HD e MP4. O melhor baixador de mídias online gratuito.">
+    <meta property="og:title" content="Guelpe - Baixar Vídeos do Instagram, TikTok e Kwai Sem Marca d'Água">
+    <meta property="og:description" content="Ferramenta online rápida para baixar vídeos e mídias de redes sociais sem marca d'água e em alta resolução.">
     <meta property="og:type" content="website">
 </head>
 """
+
+components.html(seo_tags, height=0, width=0)
+
 
 components.html(seo_tags, height=0, width=0)
 # Injeta o código de rastreamento
@@ -44,10 +47,10 @@ def obter_caminho_cookies():
 # ============================================================
 
 st.set_page_config(
-    page_title="Guelpe Downloader",
-    page_icon="⬇️",
+    page_title="Guelpe - Baixar Vídeos do Instagram, TikTok e Kwai Sem Marca d'Água",
+    page_icon="🚀",
     layout="centered",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="expanded",
 )
 
 
