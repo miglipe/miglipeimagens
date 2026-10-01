@@ -19,7 +19,17 @@ analytics_codigo = """
   gtag('config', 'G-P4CVEVB7K5');
 </script>
 """
+# --- TAGS DE SEO E META TAGS ---
+seo_tags = """
+<head>
+    <meta name="description" content="Baixe suas mídias rapidamente com o Guelpe Downloader de vídeos e criador de imagens.">
+    <meta property="og:title" content="Guelpe - Downloader de Mídias">
+    <meta property="og:description" content="Baixe vídeos e mídias de forma simples e rápida.">
+    <meta property="og:type" content="website">
+</head>
+"""
 
+components.html(seo_tags, height=0, width=0)
 # Injeta o código de rastreamento
 components.html(analytics_codigo, height=0, width=0)
 def obter_caminho_cookies():
