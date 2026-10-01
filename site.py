@@ -5,7 +5,23 @@ import os
 import tempfile
 import uuid
 from PIL import Image
+import streamlit as st
+import streamlit.components.v1 as components
 
+# --- GOOGLE ANALYTICS ---
+analytics_codigo = """
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P4CVEVB7K5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P4CVEVB7K5');
+</script>
+"""
+
+# Injeta o código de rastreamento
+components.html(analytics_codigo, height=0, width=0)
 def obter_caminho_cookies():
     if "YOUTUBE_COOKIES" in st.secrets:
         with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".txt") as f:
