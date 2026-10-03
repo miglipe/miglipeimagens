@@ -41,10 +41,18 @@ components.html(seo_tags, height=0, width=0)
 # Injeta o código de rastreamento
 components.html(analytics_codigo, height=0, width=0)
 def obter_caminho_cookies():
-    if "YOUTUBE_COOKIES" in st.secrets:
-        with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".txt") as f:
-            f.write(st.secrets["YOUTUBE_COOKIES"])
-            return f.name
+    try:
+        if "YOUTUBE_COOKIES" in st.secrets:
+            with tempfile.NamedTemporaryFile(
+                mode="w",
+                delete=False,
+                suffix=".txt"
+            ) as f:
+                f.write(st.secrets["YOUTUBE_COOKIES"])
+                return f.name
+    except Exception:
+        pass
+
     return None
 
 # ============================================================
