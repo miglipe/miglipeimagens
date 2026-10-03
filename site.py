@@ -7,7 +7,12 @@ import uuid
 from PIL import Image
 import streamlit as st
 import streamlit.components.v1 as components
-
+st.set_page_config(
+    page_title="Guelpe - Baixar Vídeos do Instagram, TikTok e Kwai Sem Marca d'Água",
+    page_icon="🚀",
+    layout="centered",
+    initial_sidebar_state="expanded",
+)
 # --- GOOGLE ANALYTICS ---
 analytics_codigo = """
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-P4CVEVB7K5"></script>
@@ -32,7 +37,7 @@ seo_tags = """
 components.html(seo_tags, height=0, width=0)
 
 
-components.html(seo_tags, height=0, width=0)
+
 # Injeta o código de rastreamento
 components.html(analytics_codigo, height=0, width=0)
 def obter_caminho_cookies():
@@ -46,12 +51,7 @@ def obter_caminho_cookies():
 # CONFIGURAÇÃO
 # ============================================================
 
-st.set_page_config(
-    page_title="Guelpe - Baixar Vídeos do Instagram, TikTok e Kwai Sem Marca d'Água",
-    page_icon="🚀",
-    layout="centered",
-    initial_sidebar_state="expanded",
-)
+
 
 
 # ============================================================
@@ -566,12 +566,11 @@ if opcao_servico == "📥 Downloader":
     st.markdown(
         """
         <div class="hero-title">
-            Baixe suas mídias rapidamente
+            Baixe vídeos do Instagram, TikTok, Kwai e outras redes sociais
         </div>
 
         <div class="hero-description">
-            Cole o link da mídia abaixo e deixe o Guelpe
-            identificar automaticamente a plataforma.
+           Cole o link do vídeo para baixar conteúdos do Instagram, TikTok, Kwai, YouTube e outras plataformas de forma rápida e simples.
         </div>
         """,
         unsafe_allow_html=True
