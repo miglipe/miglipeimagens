@@ -624,14 +624,16 @@ if opcao_servico == "📥 Downloader":
                 "verbose": True,
                 "noplaylist": True,
                 "cookiefile": cookie_path,
-                "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+                "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15",
                 "extractor_args": {
                     "youtube": {
                         "player_client": ["default", "web_embedded"]
+                    },
+                    "youtubepot-bgutilscript": {
+                        "server_home": ["/opt/render/bgutil-ytdlp-pot-provider/server"]
                     }
                 }
             }
-
             # ------------------------------------------------
             # CONFIGURAÇÃO PARA APENAS ANALISAR
             # ------------------------------------------------
@@ -884,7 +886,14 @@ if opcao_servico == "📥 Downloader":
                     "js_runtimes": {"deno": {"path": ".venv/bin/deno"}},
                     "noplaylist": True,
                     "merge_output_format": "mp4",
-
+                    "extractor_args": {
+                        "youtube": {
+                            "player_client": ["default", "web_embedded"]
+                        },
+                        "youtubepot-bgutilscript": {
+                            "server_home": ["/opt/render/bgutil-ytdlp-pot-provider/server"]
+                        }
+                    },
                 }
 
                 if "youtube.com" in url_para_download or "youtu.be" in url_para_download:
