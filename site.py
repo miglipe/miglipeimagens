@@ -639,6 +639,7 @@ if opcao_servico == "📥 Downloader":
                 "quiet": False,
                 "no_warnings": False,
                 "verbose": True,
+                "remote_components": {"ejs:github"},
                 "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
             }
 
@@ -873,19 +874,19 @@ if opcao_servico == "📥 Downloader":
                 # --------------------------------------------------
 
                 opcoes_download = {
-                    "format": "b[ext=mp4]/b/best",
+                    "format": "bestvideo[vcodec^=avc1][ext=mp4]+bestaudio[language=pt-BR][ext=m4a]/best[ext=mp4]",
                     "outtmpl": nome_temporario,
                     "quiet": False,
                     "no_warnings": False,
                     "verbose": True,
+                    "remote_components": {"ejs:github"},
                     "noplaylist": True,
-                    "postprocessors": [{
-                        "key": "FFmpegVideoConvertor",
-                        "preferedformat": "mp4",
-                    }],
+                    "merge_output_format": "mp4",
+
                 }
 
                 if "youtube.com" in url_para_download or "youtu.be" in url_para_download:
+                    cookie_path = obter_caminho_cookies()
                     opcoes_download["cookiefile"] = cookie_path
                     opcoes_download["extractor_args"] = {
                         "youtube": {
