@@ -4,3 +4,6 @@ backgroundColor = "#0B0F19"      # Fundo super escuro premium da imagem
 secondaryBackgroundColor = "#161B26" # Fundo das caixas e do menu lateral
 textColor = "#FFFFFF"            # Texto totalmente branco
 font = "sans serif"
+
+[server]
+enableStaticServing = true
