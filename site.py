@@ -626,7 +626,7 @@ if opcao_servico == "📥 Downloader":
                 "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
                 "extractor_args": {
                     "youtube": {
-                        "player_client": ["ios", "mweb"]
+                        "player_client": ["default", "web_embedded"]
                     }
                 }
             }
@@ -645,7 +645,7 @@ if opcao_servico == "📥 Downloader":
                 opcoes_info["cookiefile"] = cookie_path
                 opcoes_info["extractor_args"] = {
                     "youtube": {
-                        "player_client": ["ios", "mweb"]
+                        "player_client": ["default", "web_embedded"]
                     }
                 }
             # ------------------------------------------------
@@ -887,7 +887,7 @@ if opcao_servico == "📥 Downloader":
                     opcoes_download["cookiefile"] = cookie_path
                     opcoes_download["extractor_args"] = {
                         "youtube": {
-                            "player_client": ["ios", "mweb"]
+                            "player_client": ["default", "web_embedded"]
                         }
                     }
 
