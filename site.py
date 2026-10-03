@@ -648,7 +648,7 @@ if opcao_servico == "📥 Downloader":
                 opcoes_info["cookiefile"] = cookie_path
                 opcoes_info["extractor_args"] = {
                     "youtube": {
-                        "player_client": ["default", "web_embedded"]
+                        "player_client": ["mweb"]
                     }
                 }
             # ------------------------------------------------
@@ -892,7 +892,7 @@ if opcao_servico == "📥 Downloader":
                     opcoes_download["cookiefile"] = cookie_path
                     opcoes_download["extractor_args"] = {
                         "youtube": {
-                            "player_client": ["default", "web_embedded"]
+                            "player_client": ["mweb"]
                         }
                     }
 
