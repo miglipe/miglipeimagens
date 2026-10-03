@@ -619,8 +619,8 @@ if opcao_servico == "📥 Downloader":
             cookie_path = obter_caminho_cookies()
 
             opcoes_info = {
-                "quiet": True,
-                "no_warnings": True,
+                "quiet": False,
+                "no_warnings": False,
                 "noplaylist": True,
                 "cookiefile": cookie_path,
                 "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
@@ -635,9 +635,8 @@ if opcao_servico == "📥 Downloader":
             # CONFIGURAÇÃO PARA APENAS ANALISAR
             # ------------------------------------------------
             opcoes_info = {
-                "quiet": True,
-                "no_warnings": True,
-                "noplaylist": True,
+                "quiet": False,
+                "no_warnings": False,
                 "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
             }
 
@@ -874,8 +873,8 @@ if opcao_servico == "📥 Downloader":
                 opcoes_download = {
                     "format": "b[ext=mp4]/b/best",
                     "outtmpl": nome_temporario,
-                    "quiet": True,
-                    "no_warnings": True,
+                    "quiet": False,
+                    "no_warnings": False,
                     "noplaylist": True,
                     "postprocessors": [{
                         "key": "FFmpegVideoConvertor",
