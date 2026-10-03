@@ -640,6 +640,7 @@ if opcao_servico == "📥 Downloader":
                 "no_warnings": False,
                 "verbose": True,
                 "remote_components": {"ejs:github"},
+                "js_runtimes": {"deno": {"path": ".venv/bin/deno"}},
                 "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
             }
 
@@ -880,6 +881,7 @@ if opcao_servico == "📥 Downloader":
                     "no_warnings": False,
                     "verbose": True,
                     "remote_components": {"ejs:github"},
+                    "js_runtimes": {"deno": {"path": ".venv/bin/deno"}},
                     "noplaylist": True,
                     "merge_output_format": "mp4",
 
